@@ -9,7 +9,7 @@ int main(int argc, char ** argv)
         float local_result = 0.0, end_result = 0.0;
         double time1, time2;
 
-        num_of_iter = ( (2==argc) || (atoi( argv[1] )<10000) ) ? atoi( argv[1] ) : MAX_TERMS;
+        num_of_iter = ( (2==argc) && (atoi( argv[1] )<10000) ) ? atoi( argv[1] ) : MAX_TERMS;
 
         MPI_Init( &argc, &argv );   // начало
         MPI_Comm_rank( MPI_COMM_WORLD, &proc_rank );
@@ -36,6 +36,7 @@ int main(int argc, char ** argv)
 
                 printf( "Result: %f\n", end_result );
                 printf( "Time: %f\n", time2-time1 );
+                //printf( "%d\n", num_of_iter );
         }
 
         MPI_Finalize();
