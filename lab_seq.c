@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h> // -lm
 
 #define ISIZE 1000 
 #define JSIZE 1000
@@ -38,4 +39,5 @@ int main(int argc, char **argv)
         }
         
         fclose(ff);
+        return 0;
 }
