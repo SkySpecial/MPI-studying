@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 
 	if( 0 != proc_rank)
 	{
-		MPI_Send( &i1, 1, MPI_INT, 0, 0, MPI_COMM_WORLD); // посылаем значение i1
+		MPI_Send( &i1, 1, MPI_INT, 0, 0, MPI_COMM_WORLD);// посылаем значение i1
 		MPI_Send( &a[i1][0], (i2-i1)*JSIZE, MPI_DOUBLE, 0, 0, MPI_COMM_WORLD);
 	}
 
