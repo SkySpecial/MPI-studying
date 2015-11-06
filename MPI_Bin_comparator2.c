@@ -6,8 +6,6 @@
 
 int *dec_to_bin( int );
 
-int buf[10]; // глобальный массив надо занулять? Или он тогда неправильно работать будет?
-
 int main(int argc, char **argv)
 {
 	int num1, num2, proc_num, proc_rank, comp_result, i;
