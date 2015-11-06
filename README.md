@@ -1,3 +1,11 @@
+#MPI_Bin_comparator2.c
+
+comparator.c: В функции ‘main’:
+comparator.c:47: ошибка: lvalue required as unary ‘&’ operand
+comparator.c:61: ошибка: lvalue required as unary ‘&’ operand
+comparator.c: В функции ‘dec_to_bin’:
+comparator.c:133: предупреждение: функция возвращает адрес локальной переменной
+
 # Общие вопросы
 1) Ну опять. В лабе с.4 пишут : int argc, char*** argv. Почему теперь 3 звезды? Почему там звёзды ближе к типу, а не к переменной ( Как Саня советовал )?
 
