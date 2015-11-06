@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	{
 		MPI_Recv( &num1, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status );
 		for( i=0;i<10;i++)
-			buf1[i] = &( dec_to_bin( num1 ) + i );
+			buf1[i] = *( dec_to_bin( num1 ) + i );
 
 		printf("The first number is: ");
 		
@@ -58,7 +58,7 @@ int main(int argc, char **argv)
 	{
 		MPI_Recv( &num2, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, &status );
 		for(i=0;i<10;i++)
-			buf2[i] = &( dec_to_bin( num2 ) + 1 );
+			buf2[i] = *( dec_to_bin( num2 ) + 1 );
 
 		printf("The second number is: ");
 
