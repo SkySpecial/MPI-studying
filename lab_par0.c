@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	k = ISIZE/proc_num;
 	i1 = k * proc_rank;
 	i2 = k * (proc_rank + 1);
-	if( proc_num == proc_rank - 1 ) i2 = ISIZE;
+	if( proc_num - 1 == proc_rank ) i2 = ISIZE;
 
 	for (i=i1; i<i2; i++)
 	{
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 		}
 	}
 
-	MPI_Gather( a+proc_rank*(i2-i1)*JSIZE, (i2-i1)*JSIZE, MPI_DOUBLE, result, (i2-i1)*JSIZE, MPI_DOUBLE, 0, MPI_COMM_WORLD );
+	MPI_Gather( &a[(i2-i1)*proc_rank][0], (i2-i1)*JSIZE, MPI_DOUBLE, *result, (i2-i1)*JSIZE, MPI_DOUBLE, 0, MPI_COMM_WORLD );
 	// указательная арифметика!! - разобраться!
 	if( 0 == proc_rank ) // запись в файл одним процессом
 	{
