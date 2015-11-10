@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	k = ISIZE/proc_num;
 	i1 = k * proc_rank;
 	i2 = k * (proc_rank + 1);
-	if( proc_num == proc_rank - 1 ) i2 = ISIZE;
+	if( proc_num - 1 == proc_rank ) i2 = ISIZE;
 
 	for (i=i1; i<i2; i++)
 	{
